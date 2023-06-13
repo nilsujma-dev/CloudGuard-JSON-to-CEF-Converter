@@ -1,0 +1,267 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "policy": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "name"
+            ]
+        },
+        "findingKey": {
+            "type": "string"
+        },
+        "findingId": {
+            "type": "string"
+        },
+        "cloudGuardAccountId": {
+            "type": "string"
+        },
+        "origin": {
+            "type": "string"
+        },
+        "bundle": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "name"
+            ]
+        },
+        "reportTime": {
+            "type": "string"
+        },
+        "rule": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "ruleId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "remediation": {
+                    "type": "string"
+                },
+                "complianceTags": {
+                    "type": "string"
+                },
+                "logicHash": {
+                    "type": "string"
+                },
+                "severity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "complianceTags",
+                "description",
+                "logicHash",
+                "name",
+                "remediation",
+                "ruleId",
+                "severity"
+            ]
+        },
+        "account": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "vendor": {
+                    "type": "string"
+                },
+                "dome9CloudAccountId": {
+                    "type": "string"
+                },
+                "organizationalUnitId": {
+                    "type": "string"
+                },
+                "organizationalUnitPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dome9CloudAccountId",
+                "id",
+                "name",
+                "organizationalUnitId",
+                "organizationalUnitPath",
+                "vendor"
+            ]
+        },
+        "region": {
+            "type": "string"
+        },
+        "entity": {
+            "type": "object",
+            "properties": {
+                "network": {
+                    "type": "string"
+                },
+                "inboundRules": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "enabled": {
+                                "type": "boolean"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "number": {
+                                "type": "integer"
+                            },
+                            "protocol": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string"
+                            },
+                            "destination": {
+                                "type": "string"
+                            },
+                            "destinationPort": {
+                                "type": "integer"
+                            },
+                            "destinationPortTo": {
+                                "type": "integer"
+                            },
+                            "direction": {
+                                "type": "string"
+                            },
+                            "action": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "action",
+                            "description",
+                            "destination",
+                            "destinationPort",
+                            "destinationPortTo",
+                            "direction",
+                            "enabled",
+                            "name",
+                            "number",
+                            "protocol",
+                            "source"
+                        ]
+                    }
+                },
+                "outboundRules": {
+                    "type": "array"
+                },
+                "vmInstances": {
+                    "type": "array"
+                },
+                "resourceType": {
+                    "type": "string"
+                },
+                "selfLink": {
+                    "type": "null"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "dome9Id": {
+                    "type": "string"
+                },
+                "accountNumber": {
+                    "type": "string"
+                },
+                "assetLabels": {
+                    "type": "null"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "externalFindings": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "accountNumber",
+                "assetLabels",
+                "dome9Id",
+                "externalFindings",
+                "id",
+                "inboundRules",
+                "name",
+                "network",
+                "outboundRules",
+                "region",
+                "resourceType",
+                "selfLink",
+                "type",
+                "vmInstances"
+            ]
+        },
+        "remediationActions": {
+            "type": "array"
+        },
+        "action": {
+            "type": "string"
+        },
+        "additionalFields": {
+            "type": "array"
+        }
+    },
+    "required": [
+        "account",
+        "action",
+        "additionalFields",
+        "bundle",
+        "cloudGuardAccountId",
+        "entity",
+        "findingId",
+        "findingKey",
+        "origin",
+        "policy",
+        "region",
+        "remediationActions",
+        "reportTime",
+        "rule",
+        "status"
+    ]
+}

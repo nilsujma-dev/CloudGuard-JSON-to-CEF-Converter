@@ -1,0 +1,358 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "policy": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "name"
+            ]
+        },
+        "findingKey": {
+            "type": "string"
+        },
+        "findingId": {
+            "type": "string"
+        },
+        "cloudGuardAccountId": {
+            "type": "string"
+        },
+        "origin": {
+            "type": "string"
+        },
+        "bundle": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "name"
+            ]
+        },
+        "reportTime": {
+            "type": "string"
+        },
+        "rule": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "ruleId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "remediation": {
+                    "type": "string"
+                },
+                "complianceTags": {
+                    "type": "string"
+                },
+                "logicHash": {
+                    "type": "string"
+                },
+                "severity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "complianceTags",
+                "description",
+                "logicHash",
+                "name",
+                "remediation",
+                "ruleId",
+                "severity"
+            ]
+        },
+        "account": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "vendor": {
+                    "type": "string"
+                },
+                "dome9CloudAccountId": {
+                    "type": "string"
+                },
+                "organizationalUnitId": {
+                    "type": "string"
+                },
+                "organizationalUnitPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dome9CloudAccountId",
+                "id",
+                "name",
+                "organizationalUnitId",
+                "organizationalUnitPath",
+                "vendor"
+            ]
+        },
+        "region": {
+            "type": "string"
+        },
+        "entity": {
+            "type": "object",
+            "properties": {
+                "acl": {
+                    "type": "null"
+                },
+                "defaultObjectAcl": {
+                    "type": "null"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "logging": {
+                    "type": "null"
+                },
+                "metageneration": {
+                    "type": "integer"
+                },
+                "owner": {
+                    "type": "null"
+                },
+                "projectNumber": {
+                    "type": "integer"
+                },
+                "storageClass": {
+                    "type": "string"
+                },
+                "timeCreatedRaw": {
+                    "type": "string"
+                },
+                "timeCreated": {
+                    "type": "integer"
+                },
+                "updatedRaw": {
+                    "type": "string"
+                },
+                "updated": {
+                    "type": "integer"
+                },
+                "iamPolicy": {
+                    "type": "object",
+                    "properties": {
+                        "bindings": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "members": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "role": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "members",
+                                    "role"
+                                ]
+                            }
+                        },
+                        "eTag": {
+                            "type": "string"
+                        },
+                        "kind": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "bindings",
+                        "eTag",
+                        "kind"
+                    ]
+                },
+                "defaultEventBasedHold": {
+                    "type": "null"
+                },
+                "iamConfiguration": {
+                    "type": "object",
+                    "properties": {
+                        "bucketPolicyOnly": {
+                            "type": "object",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "lockedTimeRaw": {
+                                    "type": "string"
+                                },
+                                "lockedTime": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "enabled",
+                                "lockedTime",
+                                "lockedTimeRaw"
+                            ]
+                        },
+                        "uniformBucketLevelAccess": {
+                            "type": "object",
+                            "properties": {
+                                "enabled": {
+                                    "type": "boolean"
+                                },
+                                "lockedTimeRaw": {
+                                    "type": "string"
+                                },
+                                "lockedTime": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "enabled",
+                                "lockedTime",
+                                "lockedTimeRaw"
+                            ]
+                        },
+                        "publicAccessPrevention": {
+                            "type": "null"
+                        }
+                    },
+                    "required": [
+                        "bucketPolicyOnly",
+                        "publicAccessPrevention",
+                        "uniformBucketLevelAccess"
+                    ]
+                },
+                "retentionPolicy": {
+                    "type": "null"
+                },
+                "locationType": {
+                    "type": "null"
+                },
+                "customPlacementConfig": {
+                    "type": "null"
+                },
+                "satisfiesPZS": {
+                    "type": "null"
+                },
+                "rpo": {
+                    "type": "null"
+                },
+                "selfLink": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "dome9Id": {
+                    "type": "string"
+                },
+                "accountNumber": {
+                    "type": "string"
+                },
+                "assetLabels": {
+                    "type": "null"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "externalFindings": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "accountNumber",
+                "acl",
+                "assetLabels",
+                "customPlacementConfig",
+                "defaultEventBasedHold",
+                "defaultObjectAcl",
+                "dome9Id",
+                "externalFindings",
+                "iamConfiguration",
+                "iamPolicy",
+                "id",
+                "location",
+                "locationType",
+                "logging",
+                "metageneration",
+                "name",
+                "owner",
+                "projectNumber",
+                "region",
+                "retentionPolicy",
+                "rpo",
+                "satisfiesPZS",
+                "selfLink",
+                "storageClass",
+                "timeCreated",
+                "timeCreatedRaw",
+                "type",
+                "updated",
+                "updatedRaw"
+            ]
+        },
+        "remediationActions": {
+            "type": "array"
+        },
+        "action": {
+            "type": "string"
+        },
+        "additionalFields": {
+            "type": "array"
+        }
+    },
+    "required": [
+        "account",
+        "action",
+        "additionalFields",
+        "bundle",
+        "cloudGuardAccountId",
+        "entity",
+        "findingId",
+        "findingKey",
+        "origin",
+        "policy",
+        "region",
+        "remediationActions",
+        "reportTime",
+        "rule",
+        "status"
+    ]
+}

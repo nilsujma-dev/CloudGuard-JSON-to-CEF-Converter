@@ -1,0 +1,274 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "policy": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "name"
+            ]
+        },
+        "findingKey": {
+            "type": "string"
+        },
+        "findingId": {
+            "type": "string"
+        },
+        "cloudGuardAccountId": {
+            "type": "string"
+        },
+        "origin": {
+            "type": "string"
+        },
+        "bundle": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "name"
+            ]
+        },
+        "reportTime": {
+            "type": "string"
+        },
+        "rule": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "ruleId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "remediation": {
+                    "type": "string"
+                },
+                "complianceTags": {
+                    "type": "string"
+                },
+                "logicHash": {
+                    "type": "string"
+                },
+                "severity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "complianceTags",
+                "description",
+                "logicHash",
+                "name",
+                "remediation",
+                "ruleId",
+                "severity"
+            ]
+        },
+        "account": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "vendor": {
+                    "type": "string"
+                },
+                "dome9CloudAccountId": {
+                    "type": "string"
+                },
+                "organizationalUnitId": {
+                    "type": "string"
+                },
+                "organizationalUnitPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dome9CloudAccountId",
+                "id",
+                "name",
+                "organizationalUnitId",
+                "organizationalUnitPath",
+                "vendor"
+            ]
+        },
+        "region": {
+            "type": "string"
+        },
+        "entity": {
+            "type": "object",
+            "properties": {
+                "displayName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "oauth2ClientId": {
+                    "type": "string"
+                },
+                "projectId": {
+                    "type": "string"
+                },
+                "uniqueId": {
+                    "type": "string"
+                },
+                "keys": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "keyAlgorithm": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "privateKeyData": {
+                                "type": "null"
+                            },
+                            "privateKeyType": {
+                                "type": "null"
+                            },
+                            "publicKeyData": {
+                                "type": "null"
+                            },
+                            "validAfterTime": {
+                                "type": "integer"
+                            },
+                            "validBeforeTime": {
+                                "type": "integer"
+                            },
+                            "eTag": {
+                                "type": "null"
+                            },
+                            "managedBy": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "eTag",
+                            "keyAlgorithm",
+                            "managedBy",
+                            "name",
+                            "privateKeyData",
+                            "privateKeyType",
+                            "publicKeyData",
+                            "validAfterTime",
+                            "validBeforeTime"
+                        ]
+                    }
+                },
+                "roles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "auditConfigsExemption": {
+                    "type": "null"
+                },
+                "selfLink": {
+                    "type": "null"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "dome9Id": {
+                    "type": "string"
+                },
+                "accountNumber": {
+                    "type": "string"
+                },
+                "assetLabels": {
+                    "type": "null"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "externalFindings": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "accountNumber",
+                "assetLabels",
+                "auditConfigsExemption",
+                "displayName",
+                "dome9Id",
+                "email",
+                "externalFindings",
+                "id",
+                "keys",
+                "name",
+                "oauth2ClientId",
+                "projectId",
+                "region",
+                "roles",
+                "selfLink",
+                "type",
+                "uniqueId"
+            ]
+        },
+        "remediationActions": {
+            "type": "array"
+        },
+        "action": {
+            "type": "string"
+        },
+        "additionalFields": {
+            "type": "array"
+        }
+    },
+    "required": [
+        "account",
+        "action",
+        "additionalFields",
+        "bundle",
+        "cloudGuardAccountId",
+        "entity",
+        "findingId",
+        "findingKey",
+        "origin",
+        "policy",
+        "region",
+        "remediationActions",
+        "reportTime",
+        "rule",
+        "status"
+    ]
+}

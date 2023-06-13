@@ -1,0 +1,921 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "policy": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "name"
+            ]
+        },
+        "findingKey": {
+            "type": "string"
+        },
+        "findingId": {
+            "type": "string"
+        },
+        "cloudGuardAccountId": {
+            "type": "string"
+        },
+        "origin": {
+            "type": "string"
+        },
+        "bundle": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "name"
+            ]
+        },
+        "reportTime": {
+            "type": "string"
+        },
+        "rule": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "ruleId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "remediation": {
+                    "type": "string"
+                },
+                "complianceTags": {
+                    "type": "string"
+                },
+                "logicHash": {
+                    "type": "string"
+                },
+                "severity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "complianceTags",
+                "description",
+                "logicHash",
+                "name",
+                "remediation",
+                "ruleId",
+                "severity"
+            ]
+        },
+        "account": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "vendor": {
+                    "type": "string"
+                },
+                "dome9CloudAccountId": {
+                    "type": "string"
+                },
+                "organizationalUnitId": {
+                    "type": "string"
+                },
+                "organizationalUnitPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dome9CloudAccountId",
+                "id",
+                "name",
+                "organizationalUnitId",
+                "organizationalUnitPath",
+                "vendor"
+            ]
+        },
+        "region": {
+            "type": "string"
+        },
+        "entity": {
+            "type": "object",
+            "properties": {
+                "spec": {
+                    "type": "object",
+                    "properties": {
+                        "affinity": {
+                            "type": "object",
+                            "properties": {
+                                "nodeAffinity": {
+                                    "type": "object",
+                                    "properties": {
+                                        "preferredDuringSchedulingIgnoredDuringExecution": {
+                                            "type": "null"
+                                        },
+                                        "requiredDuringSchedulingIgnoredDuringExecution": {
+                                            "type": "object",
+                                            "properties": {
+                                                "nodeSelectorTerms": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "matchExpressions": {
+                                                                "type": "null"
+                                                            },
+                                                            "matchFields": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "key": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "operator": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "values": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "key",
+                                                                        "operator",
+                                                                        "values"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        },
+                                                        "required": [
+                                                            "matchExpressions",
+                                                            "matchFields"
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "nodeSelectorTerms"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "preferredDuringSchedulingIgnoredDuringExecution",
+                                        "requiredDuringSchedulingIgnoredDuringExecution"
+                                    ]
+                                },
+                                "podAffinity": {
+                                    "type": "null"
+                                },
+                                "podAntiAffinity": {
+                                    "type": "null"
+                                }
+                            },
+                            "required": [
+                                "nodeAffinity",
+                                "podAffinity",
+                                "podAntiAffinity"
+                            ]
+                        },
+                        "containers": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "args": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "command": {
+                                        "anyOf": [
+                                            {
+                                                "type": "null"
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "env": {
+                                        "anyOf": [
+                                            {
+                                                "type": "null"
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "value": {
+                                                            "type": "null"
+                                                        },
+                                                        "valueFrom": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "secretKeyRef": {
+                                                                    "type": "null"
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "secretKeyRef"
+                                                            ]
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "name",
+                                                        "value",
+                                                        "valueFrom"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "image": {
+                                        "type": "string"
+                                    },
+                                    "livenessProbe": {
+                                        "type": "null"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "imageDetails": {
+                                        "type": "object",
+                                        "properties": {
+                                            "registry": {
+                                                "type": "string"
+                                            },
+                                            "repository": {
+                                                "type": "string"
+                                            },
+                                            "tag": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "registry",
+                                            "repository",
+                                            "tag"
+                                        ]
+                                    },
+                                    "parsedArgs": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "key",
+                                                "value"
+                                            ]
+                                        }
+                                    },
+                                    "ports": {
+                                        "anyOf": [
+                                            {
+                                                "type": "null"
+                                            },
+                                            {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "containerPort": {
+                                                            "type": "integer"
+                                                        },
+                                                        "hostIP": {
+                                                            "type": "null"
+                                                        },
+                                                        "hostPort": {
+                                                            "type": "integer"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "protocol": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "containerPort",
+                                                        "hostIP",
+                                                        "hostPort",
+                                                        "name",
+                                                        "protocol"
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "readinessProbe": {
+                                        "type": "null"
+                                    },
+                                    "resources": {
+                                        "type": "object",
+                                        "properties": {
+                                            "limits": {
+                                                "type": "null"
+                                            },
+                                            "requests": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "memory": {
+                                                        "type": "string"
+                                                    },
+                                                    "cpu": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "cpu",
+                                                    "memory"
+                                                ]
+                                            }
+                                        },
+                                        "required": [
+                                            "limits",
+                                            "requests"
+                                        ]
+                                    },
+                                    "securityContext": {
+                                        "anyOf": [
+                                            {
+                                                "type": "null"
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "allowPrivilegeEscalation": {
+                                                        "type": "null"
+                                                    },
+                                                    "capabilities": {
+                                                        "type": "null"
+                                                    },
+                                                    "privileged": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "procMount": {
+                                                        "type": "null"
+                                                    },
+                                                    "readOnlyRootFilesystem": {
+                                                        "type": "null"
+                                                    },
+                                                    "runAsGroup": {
+                                                        "type": "null"
+                                                    },
+                                                    "runAsNonRoot": {
+                                                        "type": "null"
+                                                    },
+                                                    "runAsUser": {
+                                                        "type": "null"
+                                                    },
+                                                    "seLinuxOptions": {
+                                                        "type": "null"
+                                                    },
+                                                    "windowsOptions": {
+                                                        "type": "null"
+                                                    },
+                                                    "seccompProfile": {
+                                                        "type": "null"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "allowPrivilegeEscalation",
+                                                    "capabilities",
+                                                    "privileged",
+                                                    "procMount",
+                                                    "readOnlyRootFilesystem",
+                                                    "runAsGroup",
+                                                    "runAsNonRoot",
+                                                    "runAsUser",
+                                                    "seLinuxOptions",
+                                                    "seccompProfile",
+                                                    "windowsOptions"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "volumeMounts": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "mountPath": {
+                                                    "type": "string"
+                                                },
+                                                "readOnly": {
+                                                    "type": "boolean"
+                                                },
+                                                "mountPropagation": {
+                                                    "type": "null"
+                                                },
+                                                "subPath": {
+                                                    "type": "null"
+                                                },
+                                                "subPathExpr": {
+                                                    "type": "null"
+                                                }
+                                            },
+                                            "required": [
+                                                "mountPath",
+                                                "mountPropagation",
+                                                "name",
+                                                "readOnly",
+                                                "subPath",
+                                                "subPathExpr"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "args",
+                                    "command",
+                                    "env",
+                                    "image",
+                                    "imageDetails",
+                                    "livenessProbe",
+                                    "name",
+                                    "parsedArgs",
+                                    "ports",
+                                    "readinessProbe",
+                                    "resources",
+                                    "securityContext",
+                                    "volumeMounts"
+                                ]
+                            }
+                        },
+                        "dnsConfig": {
+                            "type": "null"
+                        },
+                        "hostAliases": {
+                            "type": "null"
+                        },
+                        "hostIPC": {
+                            "type": "boolean"
+                        },
+                        "hostNetwork": {
+                            "type": "boolean"
+                        },
+                        "hostPID": {
+                            "type": "boolean"
+                        },
+                        "initContainers": {
+                            "type": "null"
+                        },
+                        "nodeInfo": {
+                            "type": "object",
+                            "properties": {
+                                "conditions": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "message": {
+                                                "type": "string"
+                                            },
+                                            "reason": {
+                                                "type": "string"
+                                            },
+                                            "status": {
+                                                "type": "string"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "message",
+                                            "reason",
+                                            "status",
+                                            "type"
+                                        ]
+                                    }
+                                },
+                                "labels": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "key": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "key",
+                                            "value"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "conditions",
+                                "labels"
+                            ]
+                        },
+                        "nodeName": {
+                            "type": "string"
+                        },
+                        "priority": {
+                            "type": "integer"
+                        },
+                        "priorityClassName": {
+                            "type": "string"
+                        },
+                        "securityContext": {
+                            "type": "object",
+                            "properties": {
+                                "fsGroup": {
+                                    "type": "null"
+                                },
+                                "runAsGroup": {
+                                    "type": "null"
+                                },
+                                "runAsNonRoot": {
+                                    "type": "null"
+                                },
+                                "runAsUser": {
+                                    "type": "null"
+                                },
+                                "seLinuxOptions": {
+                                    "type": "null"
+                                },
+                                "supplementalGroups": {
+                                    "type": "null"
+                                },
+                                "sysctls": {
+                                    "type": "null"
+                                },
+                                "windowsOptions": {
+                                    "type": "null"
+                                },
+                                "seccompProfile": {
+                                    "type": "null"
+                                }
+                            },
+                            "required": [
+                                "fsGroup",
+                                "runAsGroup",
+                                "runAsNonRoot",
+                                "runAsUser",
+                                "seLinuxOptions",
+                                "seccompProfile",
+                                "supplementalGroups",
+                                "sysctls",
+                                "windowsOptions"
+                            ]
+                        },
+                        "serviceAccount": {
+                            "type": "string"
+                        },
+                        "serviceAccountName": {
+                            "type": "string"
+                        },
+                        "tolerations": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "key": {
+                                        "type": "null"
+                                    },
+                                    "operator": {
+                                        "type": "string"
+                                    },
+                                    "effect": {
+                                        "type": "null"
+                                    }
+                                },
+                                "required": [
+                                    "effect",
+                                    "key",
+                                    "operator"
+                                ]
+                            }
+                        },
+                        "volumes": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "hostPath": {
+                                        "anyOf": [
+                                            {
+                                                "type": "null"
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "path": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "path",
+                                                    "type"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "flexVolume": {
+                                        "type": "null"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "persistentVolumeClaim": {
+                                        "type": "null"
+                                    }
+                                },
+                                "required": [
+                                    "flexVolume",
+                                    "hostPath",
+                                    "name",
+                                    "persistentVolumeClaim"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "affinity",
+                        "containers",
+                        "dnsConfig",
+                        "hostAliases",
+                        "hostIPC",
+                        "hostNetwork",
+                        "hostPID",
+                        "initContainers",
+                        "nodeInfo",
+                        "nodeName",
+                        "priority",
+                        "priorityClassName",
+                        "securityContext",
+                        "serviceAccount",
+                        "serviceAccountName",
+                        "tolerations",
+                        "volumes"
+                    ]
+                },
+                "status": {
+                    "type": "object",
+                    "properties": {
+                        "phase": {
+                            "type": "string"
+                        },
+                        "podIP": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "phase",
+                        "podIP"
+                    ]
+                },
+                "networkPolicies": {
+                    "type": "object",
+                    "properties": {
+                        "ingress": {
+                            "type": "array"
+                        },
+                        "egress": {
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "egress",
+                        "ingress"
+                    ]
+                },
+                "owner": {
+                    "type": "object",
+                    "properties": {
+                        "ownerReferences": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "kind": {
+                                        "type": "string"
+                                    },
+                                    "uid": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "kind",
+                                    "name",
+                                    "uid"
+                                ]
+                            }
+                        },
+                        "rootOwner": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "type": "string"
+                                },
+                                "uid": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "kind",
+                                "name",
+                                "uid"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "ownerReferences",
+                        "rootOwner"
+                    ]
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "value"
+                        ]
+                    }
+                },
+                "namespace": {
+                    "type": "string"
+                },
+                "annotations": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "value"
+                        ]
+                    }
+                },
+                "labels": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "value"
+                        ]
+                    }
+                },
+                "creationTime": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "dome9Id": {
+                    "type": "string"
+                },
+                "accountNumber": {
+                    "type": "string"
+                },
+                "assetLabels": {
+                    "type": "null"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "externalFindings": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "accountNumber",
+                "annotations",
+                "assetLabels",
+                "creationTime",
+                "dome9Id",
+                "externalFindings",
+                "id",
+                "labels",
+                "name",
+                "namespace",
+                "networkPolicies",
+                "owner",
+                "region",
+                "spec",
+                "status",
+                "tags",
+                "type"
+            ]
+        },
+        "remediationActions": {
+            "type": "array"
+        },
+        "action": {
+            "type": "string"
+        },
+        "additionalFields": {
+            "type": "array"
+        }
+    },
+    "required": [
+        "account",
+        "action",
+        "additionalFields",
+        "bundle",
+        "cloudGuardAccountId",
+        "entity",
+        "findingId",
+        "findingKey",
+        "origin",
+        "policy",
+        "region",
+        "remediationActions",
+        "reportTime",
+        "rule",
+        "status"
+    ]
+}

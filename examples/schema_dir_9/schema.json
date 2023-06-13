@@ -1,0 +1,402 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "policy": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "name"
+            ]
+        },
+        "findingKey": {
+            "type": "string"
+        },
+        "findingId": {
+            "type": "string"
+        },
+        "cloudGuardAccountId": {
+            "type": "string"
+        },
+        "origin": {
+            "type": "string"
+        },
+        "bundle": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "name"
+            ]
+        },
+        "reportTime": {
+            "type": "string"
+        },
+        "rule": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "ruleId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "remediation": {
+                    "type": "string"
+                },
+                "complianceTags": {
+                    "type": "string"
+                },
+                "logicHash": {
+                    "type": "string"
+                },
+                "severity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "complianceTags",
+                "description",
+                "logicHash",
+                "name",
+                "remediation",
+                "ruleId",
+                "severity"
+            ]
+        },
+        "account": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "vendor": {
+                    "type": "string"
+                },
+                "dome9CloudAccountId": {
+                    "type": "string"
+                },
+                "organizationalUnitId": {
+                    "type": "string"
+                },
+                "organizationalUnitPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dome9CloudAccountId",
+                "id",
+                "name",
+                "organizationalUnitId",
+                "organizationalUnitPath",
+                "vendor"
+            ]
+        },
+        "region": {
+            "type": "string"
+        },
+        "entity": {
+            "type": "object",
+            "properties": {
+                "autoCreateSubnetworks": {
+                    "type": "boolean"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "gatewayIPv4": {
+                    "type": "null"
+                },
+                "iPv4Range": {
+                    "type": "null"
+                },
+                "subnetworks": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "description": {
+                                "type": "null"
+                            },
+                            "gatewayAddress": {
+                                "type": "string"
+                            },
+                            "ipCidrRange": {
+                                "type": "string"
+                            },
+                            "network": {
+                                "type": "string"
+                            },
+                            "fingerPrint": {
+                                "type": "string"
+                            },
+                            "allowSubnetCidrRoutesOverlap": {
+                                "type": "boolean"
+                            },
+                            "enableFlowLogs": {
+                                "type": "null"
+                            },
+                            "privateIpGoogleAccess": {
+                                "type": "boolean"
+                            },
+                            "secondaryIpRanges": {
+                                "type": "array"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "dome9Id": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "selfLink": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "allowSubnetCidrRoutesOverlap",
+                            "description",
+                            "dome9Id",
+                            "enableFlowLogs",
+                            "fingerPrint",
+                            "gatewayAddress",
+                            "ipCidrRange",
+                            "name",
+                            "network",
+                            "privateIpGoogleAccess",
+                            "region",
+                            "secondaryIpRanges",
+                            "selfLink"
+                        ]
+                    }
+                },
+                "firewallRules": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "allowed": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ipProtocol": {
+                                            "type": "string"
+                                        },
+                                        "ports": {
+                                            "anyOf": [
+                                                {
+                                                    "type": "null"
+                                                },
+                                                {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "ipProtocol",
+                                        "ports"
+                                    ]
+                                }
+                            },
+                            "denied": {
+                                "type": "null"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "destinationRanges": {
+                                "type": "null"
+                            },
+                            "network": {
+                                "type": "string"
+                            },
+                            "sourceRanges": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "sourceTags": {
+                                "type": "null"
+                            },
+                            "targetTags": {
+                                "type": "null"
+                            },
+                            "priority": {
+                                "type": "integer"
+                            },
+                            "direction": {
+                                "type": "string"
+                            },
+                            "action": {
+                                "type": "string"
+                            },
+                            "enabled": {
+                                "type": "boolean"
+                            },
+                            "logConfig": {
+                                "type": "object",
+                                "properties": {
+                                    "enable": {
+                                        "type": "boolean"
+                                    },
+                                    "eTag": {
+                                        "type": "null"
+                                    }
+                                },
+                                "required": [
+                                    "eTag",
+                                    "enable"
+                                ]
+                            },
+                            "enableLogging": {
+                                "type": "boolean"
+                            },
+                            "targetServiceAccounts": {
+                                "type": "null"
+                            },
+                            "sourceServiceAccounts": {
+                                "type": "null"
+                            }
+                        },
+                        "required": [
+                            "action",
+                            "allowed",
+                            "denied",
+                            "description",
+                            "destinationRanges",
+                            "direction",
+                            "enableLogging",
+                            "enabled",
+                            "logConfig",
+                            "network",
+                            "priority",
+                            "sourceRanges",
+                            "sourceServiceAccounts",
+                            "sourceTags",
+                            "targetServiceAccounts",
+                            "targetTags"
+                        ]
+                    }
+                },
+                "resourceType": {
+                    "type": "string"
+                },
+                "dnsPolicy": {
+                    "type": "null"
+                },
+                "isLegacy": {
+                    "type": "boolean"
+                },
+                "selfLink": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "dome9Id": {
+                    "type": "string"
+                },
+                "accountNumber": {
+                    "type": "string"
+                },
+                "assetLabels": {
+                    "type": "null"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "externalFindings": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "accountNumber",
+                "assetLabels",
+                "autoCreateSubnetworks",
+                "description",
+                "dnsPolicy",
+                "dome9Id",
+                "externalFindings",
+                "firewallRules",
+                "gatewayIPv4",
+                "iPv4Range",
+                "id",
+                "isLegacy",
+                "name",
+                "region",
+                "resourceType",
+                "selfLink",
+                "subnetworks",
+                "type"
+            ]
+        },
+        "remediationActions": {
+            "type": "array"
+        },
+        "action": {
+            "type": "string"
+        },
+        "additionalFields": {
+            "type": "array"
+        }
+    },
+    "required": [
+        "account",
+        "action",
+        "additionalFields",
+        "bundle",
+        "cloudGuardAccountId",
+        "entity",
+        "findingId",
+        "findingKey",
+        "origin",
+        "policy",
+        "region",
+        "remediationActions",
+        "reportTime",
+        "rule",
+        "status"
+    ]
+}

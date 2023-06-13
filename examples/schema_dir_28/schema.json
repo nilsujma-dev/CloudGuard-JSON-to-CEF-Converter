@@ -1,0 +1,944 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "policy": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "name"
+            ]
+        },
+        "findingKey": {
+            "type": "string"
+        },
+        "findingId": {
+            "type": "string"
+        },
+        "cloudGuardAccountId": {
+            "type": "string"
+        },
+        "origin": {
+            "type": "string"
+        },
+        "bundle": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "description",
+                "id",
+                "name"
+            ]
+        },
+        "reportTime": {
+            "type": "string"
+        },
+        "rule": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "ruleId": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "remediation": {
+                    "type": "string"
+                },
+                "complianceTags": {
+                    "type": "string"
+                },
+                "logicHash": {
+                    "type": "string"
+                },
+                "severity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "complianceTags",
+                "description",
+                "logicHash",
+                "name",
+                "remediation",
+                "ruleId",
+                "severity"
+            ]
+        },
+        "account": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "vendor": {
+                    "type": "string"
+                },
+                "dome9CloudAccountId": {
+                    "type": "string"
+                },
+                "organizationalUnitId": {
+                    "type": "string"
+                },
+                "organizationalUnitPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dome9CloudAccountId",
+                "id",
+                "name",
+                "organizationalUnitId",
+                "organizationalUnitPath",
+                "vendor"
+            ]
+        },
+        "region": {
+            "type": "string"
+        },
+        "entity": {
+            "type": "object",
+            "properties": {
+                "spec": {
+                    "type": "object",
+                    "properties": {
+                        "taints": {
+                            "type": "null"
+                        }
+                    },
+                    "required": [
+                        "taints"
+                    ]
+                },
+                "status": {
+                    "type": "object",
+                    "properties": {
+                        "addresses": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "address",
+                                    "type"
+                                ]
+                            }
+                        },
+                        "conditions": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "message": {
+                                        "type": "string"
+                                    },
+                                    "reason": {
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "message",
+                                    "reason",
+                                    "status",
+                                    "type"
+                                ]
+                            }
+                        },
+                        "nodeInfo": {
+                            "type": "object",
+                            "properties": {
+                                "kernelVersion": {
+                                    "type": "string"
+                                },
+                                "osImage": {
+                                    "type": "string"
+                                },
+                                "containerRuntimeVersion": {
+                                    "type": "string"
+                                },
+                                "kubeletVersion": {
+                                    "type": "string"
+                                },
+                                "kubeProxyVersion": {
+                                    "type": "string"
+                                },
+                                "operatingSystem": {
+                                    "type": "string"
+                                },
+                                "architecture": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "architecture",
+                                "containerRuntimeVersion",
+                                "kernelVersion",
+                                "kubeProxyVersion",
+                                "kubeletVersion",
+                                "operatingSystem",
+                                "osImage"
+                            ]
+                        },
+                        "daemonEndpoints": {
+                            "type": "object",
+                            "properties": {
+                                "kubeletEndpoint": {
+                                    "type": "object",
+                                    "properties": {
+                                        "port": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "port"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "kubeletEndpoint"
+                            ]
+                        },
+                        "images": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "names": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "sizeBytes": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "names",
+                                    "sizeBytes"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "addresses",
+                        "conditions",
+                        "daemonEndpoints",
+                        "images",
+                        "nodeInfo"
+                    ]
+                },
+                "kubeletData": {
+                    "type": "object",
+                    "properties": {
+                        "kubeletconfig": {
+                            "type": "object",
+                            "properties": {
+                                "enableServer": {
+                                    "type": "boolean"
+                                },
+                                "staticPodPath": {
+                                    "type": "string"
+                                },
+                                "syncFrequency": {
+                                    "type": "string"
+                                },
+                                "fileCheckFrequency": {
+                                    "type": "string"
+                                },
+                                "httpCheckFrequency": {
+                                    "type": "string"
+                                },
+                                "address": {
+                                    "type": "string"
+                                },
+                                "port": {
+                                    "type": "integer"
+                                },
+                                "tlsCipherSuites": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "tlsMinVersion": {
+                                    "type": "string"
+                                },
+                                "rotateCertificates": {
+                                    "type": "boolean"
+                                },
+                                "serverTLSBootstrap": {
+                                    "type": "boolean"
+                                },
+                                "authentication": {
+                                    "type": "object",
+                                    "properties": {
+                                        "x509": {
+                                            "type": "object",
+                                            "properties": {
+                                                "clientCAFile": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "clientCAFile"
+                                            ]
+                                        },
+                                        "webhook": {
+                                            "type": "object",
+                                            "properties": {
+                                                "enabled": {
+                                                    "type": "boolean"
+                                                },
+                                                "cacheTTL": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "cacheTTL",
+                                                "enabled"
+                                            ]
+                                        },
+                                        "anonymous": {
+                                            "type": "object",
+                                            "properties": {
+                                                "enabled": {
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": [
+                                                "enabled"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "anonymous",
+                                        "webhook",
+                                        "x509"
+                                    ]
+                                },
+                                "authorization": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mode": {
+                                            "type": "string"
+                                        },
+                                        "webhook": {
+                                            "type": "object",
+                                            "properties": {
+                                                "cacheAuthorizedTTL": {
+                                                    "type": "string"
+                                                },
+                                                "cacheUnauthorizedTTL": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "cacheAuthorizedTTL",
+                                                "cacheUnauthorizedTTL"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "mode",
+                                        "webhook"
+                                    ]
+                                },
+                                "registryPullQPS": {
+                                    "type": "integer"
+                                },
+                                "registryBurst": {
+                                    "type": "integer"
+                                },
+                                "eventRecordQPS": {
+                                    "type": "integer"
+                                },
+                                "eventBurst": {
+                                    "type": "integer"
+                                },
+                                "enableDebuggingHandlers": {
+                                    "type": "boolean"
+                                },
+                                "healthzPort": {
+                                    "type": "integer"
+                                },
+                                "healthzBindAddress": {
+                                    "type": "string"
+                                },
+                                "oomScoreAdj": {
+                                    "type": "integer"
+                                },
+                                "clusterDomain": {
+                                    "type": "string"
+                                },
+                                "clusterDNS": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "streamingConnectionIdleTimeout": {
+                                    "type": "string"
+                                },
+                                "nodeStatusUpdateFrequency": {
+                                    "type": "string"
+                                },
+                                "nodeStatusReportFrequency": {
+                                    "type": "string"
+                                },
+                                "nodeLeaseDurationSeconds": {
+                                    "type": "integer"
+                                },
+                                "imageMinimumGCAge": {
+                                    "type": "string"
+                                },
+                                "imageGCHighThresholdPercent": {
+                                    "type": "integer"
+                                },
+                                "imageGCLowThresholdPercent": {
+                                    "type": "integer"
+                                },
+                                "volumeStatsAggPeriod": {
+                                    "type": "string"
+                                },
+                                "systemCgroups": {
+                                    "type": "string"
+                                },
+                                "cgroupRoot": {
+                                    "type": "string"
+                                },
+                                "cgroupsPerQOS": {
+                                    "type": "boolean"
+                                },
+                                "cgroupDriver": {
+                                    "type": "string"
+                                },
+                                "cpuManagerPolicy": {
+                                    "type": "string"
+                                },
+                                "cpuManagerReconcilePeriod": {
+                                    "type": "string"
+                                },
+                                "memoryManagerPolicy": {
+                                    "type": "string"
+                                },
+                                "topologyManagerPolicy": {
+                                    "type": "string"
+                                },
+                                "topologyManagerScope": {
+                                    "type": "string"
+                                },
+                                "runtimeRequestTimeout": {
+                                    "type": "string"
+                                },
+                                "hairpinMode": {
+                                    "type": "string"
+                                },
+                                "maxPods": {
+                                    "type": "integer"
+                                },
+                                "podPidsLimit": {
+                                    "type": "integer"
+                                },
+                                "resolvConf": {
+                                    "type": "string"
+                                },
+                                "cpuCFSQuota": {
+                                    "type": "boolean"
+                                },
+                                "cpuCFSQuotaPeriod": {
+                                    "type": "string"
+                                },
+                                "nodeStatusMaxImages": {
+                                    "type": "integer"
+                                },
+                                "maxOpenFiles": {
+                                    "type": "integer"
+                                },
+                                "contentType": {
+                                    "type": "string"
+                                },
+                                "kubeAPIQPS": {
+                                    "type": "integer"
+                                },
+                                "kubeAPIBurst": {
+                                    "type": "integer"
+                                },
+                                "serializeImagePulls": {
+                                    "type": "boolean"
+                                },
+                                "evictionHard": {
+                                    "type": "object",
+                                    "properties": {
+                                        "imagefs.available": {
+                                            "type": "string"
+                                        },
+                                        "memory.available": {
+                                            "type": "string"
+                                        },
+                                        "nodefs.available": {
+                                            "type": "string"
+                                        },
+                                        "nodefs.inodesFree": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "imagefs.available",
+                                        "memory.available",
+                                        "nodefs.available",
+                                        "nodefs.inodesFree"
+                                    ]
+                                },
+                                "evictionPressureTransitionPeriod": {
+                                    "type": "string"
+                                },
+                                "enableControllerAttachDetach": {
+                                    "type": "boolean"
+                                },
+                                "makeIPTablesUtilChains": {
+                                    "type": "boolean"
+                                },
+                                "iptablesMasqueradeBit": {
+                                    "type": "integer"
+                                },
+                                "iptablesDropBit": {
+                                    "type": "integer"
+                                },
+                                "featureGates": {
+                                    "type": "object",
+                                    "properties": {
+                                        "APIPriorityAndFairness": {
+                                            "type": "boolean"
+                                        },
+                                        "CSIMigrationAWS": {
+                                            "type": "boolean"
+                                        },
+                                        "CSIMigrationAzureFile": {
+                                            "type": "boolean"
+                                        },
+                                        "CSIMigrationGCE": {
+                                            "type": "boolean"
+                                        },
+                                        "CSIMigrationvSphere": {
+                                            "type": "boolean"
+                                        },
+                                        "DownwardAPIHugePages": {
+                                            "type": "boolean"
+                                        },
+                                        "PodSecurity": {
+                                            "type": "boolean"
+                                        },
+                                        "RotateKubeletServerCertificate": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "APIPriorityAndFairness",
+                                        "CSIMigrationAWS",
+                                        "CSIMigrationAzureFile",
+                                        "CSIMigrationGCE",
+                                        "CSIMigrationvSphere",
+                                        "DownwardAPIHugePages",
+                                        "PodSecurity",
+                                        "RotateKubeletServerCertificate"
+                                    ]
+                                },
+                                "failSwapOn": {
+                                    "type": "boolean"
+                                },
+                                "memorySwap": {
+                                    "type": "object"
+                                },
+                                "containerLogMaxSize": {
+                                    "type": "string"
+                                },
+                                "containerLogMaxFiles": {
+                                    "type": "integer"
+                                },
+                                "configMapAndSecretChangeDetectionStrategy": {
+                                    "type": "string"
+                                },
+                                "systemReserved": {
+                                    "type": "object",
+                                    "properties": {
+                                        "cpu": {
+                                            "type": "string"
+                                        },
+                                        "ephemeral-storage": {
+                                            "type": "string"
+                                        },
+                                        "memory": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "cpu",
+                                        "ephemeral-storage",
+                                        "memory"
+                                    ]
+                                },
+                                "enforceNodeAllocatable": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "volumePluginDir": {
+                                    "type": "string"
+                                },
+                                "logging": {
+                                    "type": "object",
+                                    "properties": {
+                                        "format": {
+                                            "type": "string"
+                                        },
+                                        "flushFrequency": {
+                                            "type": "integer"
+                                        },
+                                        "verbosity": {
+                                            "type": "integer"
+                                        },
+                                        "options": {
+                                            "type": "object",
+                                            "properties": {
+                                                "json": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "infoBufferSize": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "infoBufferSize"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "json"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "flushFrequency",
+                                        "format",
+                                        "options",
+                                        "verbosity"
+                                    ]
+                                },
+                                "enableSystemLogHandler": {
+                                    "type": "boolean"
+                                },
+                                "shutdownGracePeriod": {
+                                    "type": "string"
+                                },
+                                "shutdownGracePeriodCriticalPods": {
+                                    "type": "string"
+                                },
+                                "enableProfilingHandler": {
+                                    "type": "boolean"
+                                },
+                                "enableDebugFlagsHandler": {
+                                    "type": "boolean"
+                                },
+                                "seccompDefault": {
+                                    "type": "boolean"
+                                },
+                                "memoryThrottlingFactor": {
+                                    "type": "number"
+                                },
+                                "registerNode": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "address",
+                                "authentication",
+                                "authorization",
+                                "cgroupDriver",
+                                "cgroupRoot",
+                                "cgroupsPerQOS",
+                                "clusterDNS",
+                                "clusterDomain",
+                                "configMapAndSecretChangeDetectionStrategy",
+                                "containerLogMaxFiles",
+                                "containerLogMaxSize",
+                                "contentType",
+                                "cpuCFSQuota",
+                                "cpuCFSQuotaPeriod",
+                                "cpuManagerPolicy",
+                                "cpuManagerReconcilePeriod",
+                                "enableControllerAttachDetach",
+                                "enableDebugFlagsHandler",
+                                "enableDebuggingHandlers",
+                                "enableProfilingHandler",
+                                "enableServer",
+                                "enableSystemLogHandler",
+                                "enforceNodeAllocatable",
+                                "eventBurst",
+                                "eventRecordQPS",
+                                "evictionHard",
+                                "evictionPressureTransitionPeriod",
+                                "failSwapOn",
+                                "featureGates",
+                                "fileCheckFrequency",
+                                "hairpinMode",
+                                "healthzBindAddress",
+                                "healthzPort",
+                                "httpCheckFrequency",
+                                "imageGCHighThresholdPercent",
+                                "imageGCLowThresholdPercent",
+                                "imageMinimumGCAge",
+                                "iptablesDropBit",
+                                "iptablesMasqueradeBit",
+                                "kubeAPIBurst",
+                                "kubeAPIQPS",
+                                "logging",
+                                "makeIPTablesUtilChains",
+                                "maxOpenFiles",
+                                "maxPods",
+                                "memoryManagerPolicy",
+                                "memorySwap",
+                                "memoryThrottlingFactor",
+                                "nodeLeaseDurationSeconds",
+                                "nodeStatusMaxImages",
+                                "nodeStatusReportFrequency",
+                                "nodeStatusUpdateFrequency",
+                                "oomScoreAdj",
+                                "podPidsLimit",
+                                "port",
+                                "registerNode",
+                                "registryBurst",
+                                "registryPullQPS",
+                                "resolvConf",
+                                "rotateCertificates",
+                                "runtimeRequestTimeout",
+                                "seccompDefault",
+                                "serializeImagePulls",
+                                "serverTLSBootstrap",
+                                "shutdownGracePeriod",
+                                "shutdownGracePeriodCriticalPods",
+                                "staticPodPath",
+                                "streamingConnectionIdleTimeout",
+                                "syncFrequency",
+                                "systemCgroups",
+                                "systemReserved",
+                                "tlsCipherSuites",
+                                "tlsMinVersion",
+                                "topologyManagerPolicy",
+                                "topologyManagerScope",
+                                "volumePluginDir",
+                                "volumeStatsAggPeriod"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "kubeletconfig"
+                    ]
+                },
+                "pods": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "labels": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "key",
+                                        "value"
+                                    ]
+                                }
+                            },
+                            "namespace": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "labels",
+                            "name",
+                            "namespace"
+                        ]
+                    }
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "value"
+                        ]
+                    }
+                },
+                "annotations": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "value"
+                        ]
+                    }
+                },
+                "labels": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "key": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "key",
+                            "value"
+                        ]
+                    }
+                },
+                "creationTime": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "dome9Id": {
+                    "type": "string"
+                },
+                "accountNumber": {
+                    "type": "string"
+                },
+                "assetLabels": {
+                    "type": "null"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "externalFindings": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "accountNumber",
+                "annotations",
+                "assetLabels",
+                "creationTime",
+                "dome9Id",
+                "externalFindings",
+                "id",
+                "kubeletData",
+                "labels",
+                "name",
+                "pods",
+                "region",
+                "spec",
+                "status",
+                "tags",
+                "type"
+            ]
+        },
+        "remediationActions": {
+            "type": "array"
+        },
+        "action": {
+            "type": "string"
+        },
+        "additionalFields": {
+            "type": "array"
+        }
+    },
+    "required": [
+        "account",
+        "action",
+        "additionalFields",
+        "bundle",
+        "cloudGuardAccountId",
+        "entity",
+        "findingId",
+        "findingKey",
+        "origin",
+        "policy",
+        "region",
+        "remediationActions",
+        "reportTime",
+        "rule",
+        "status"
+    ]
+}
