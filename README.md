@@ -1,0 +1,3 @@
+### "JSON to CEF String Converter for CloudGuard Alerts"
+
+This GitHub repository hosts a Python script designed to convert JSON-formatted security alert data from CheckPoint CloudGuard into a Common Event Format (CEF) string. The script parses key information such as rule name, description, severity, source user details, and compliance status from a provided JSON file. It then formats these details into a standardized CEF string, ideal for integration with security information and event management (SIEM) systems. This tool is particularly useful for cybersecurity professionals looking to streamline alert management and analysis.
